@@ -1,15 +1,101 @@
+/* ====== Base ====== */
+:root{
+  --blue:#224E8B;
+  --gold:#F7B500;
+  --ink:#0F172A;
+  --muted:#475569;
+  --bg:#F7F9FC;
+  --border:#E5E7EB;
+  --ring:rgba(34,78,139,.12);
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  font-family: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color:var(--ink);
+  background:#fff;
+  line-height:1.55;
+}
 
-body { font-family: 'Poppins', sans-serif; margin: 0; color: #222; background: #fff; }
-.nav { background: #fff; border-bottom: 1px solid #ccc; padding: 10px 20px; position: sticky; top: 0; }
-.nav-inner { display: flex; justify-content: space-between; align-items: center; max-width: 1080px; margin: auto; }
-.logo { height: 45px; }
-nav a { margin: 0 10px; text-decoration: none; color: #224E8B; font-weight: 600; }
-.hero { background: linear-gradient(120deg, #ffffff, #eef4ff); text-align: center; padding: 80px 20px; }
-.hero h1 { font-size: 38px; color: #224E8B; }
-.hero p { font-size: 18px; color: #555; }
-.section { max-width: 1080px; margin: auto; padding: 60px 20px; }
-.section.alt { background: #f7f7f7; }
-.gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
-.gallery img { width: 100%; border-radius: 8px; }
-.video { text-align: center; margin-top: 20px; }
-.footer { text-align: center; padding: 30px; background: #224E8B; color: #fff; }
+/* ====== Layout helpers ====== */
+.container{max-width:1080px;margin:0 auto;padding:0 20px}
+
+/* ====== Header / Nav (tighter & balanced) ====== */
+.nav{
+  position:sticky; top:0; z-index:50;
+  background:#fff; border-bottom:1px solid var(--border);
+  box-shadow:0 4px 16px var(--ring);
+}
+.nav-inner{
+  height:64px; display:flex; align-items:center; justify-content:space-between;
+}
+.brand{display:flex; align-items:center; gap:10px}
+.logo{height:36px; width:auto; display:block}
+.brand-name{font-weight:700; font-size:18px; color:var(--blue); letter-spacing:.2px}
+nav a{
+  text-decoration:none; color:var(--blue); font-weight:600;
+  margin-left:16px; padding:8px 0; border-bottom:2px solid transparent;
+}
+nav a:hover{border-bottom-color:var(--blue)}
+
+/* ====== Hero (reduced space) ====== */
+.hero{
+  background:linear-gradient(180deg,#ffffff 0%, #eef4ff 100%);
+  padding:56px 0 40px;   /* was 80px: tighter */
+}
+.hero h1{
+  margin:0 0 8px; font-size:44px; line-height:1.12; color:var(--blue);
+}
+.hero p{margin:0; color:var(--muted); font-size:18px}
+
+/* ====== Sections (tighter vertical rhythm) ====== */
+.section{padding:40px 0}            /* was 60px */
+.section.alt{background:var(--bg)}
+.section h2{margin:0 0 14px; font-size:28px}
+
+/* ====== Cards / blocks ====== */
+.card{
+  background:#fff; border:1px solid var(--border);
+  border-radius:14px; padding:18px;
+  box-shadow:0 6px 18px var(--ring);
+}
+.card h3{margin:0 0 8px; color:var(--blue)}
+
+/* ====== Lists ====== */
+ul{padding-left:20px; margin:10px 0 0}
+li{margin:6px 0}
+
+/* ====== Gallery (uniform tiles) ====== */
+.gallery{
+  display:grid; gap:16px;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  margin-top:8px;
+}
+.gallery img{
+  width:100%; aspect-ratio:16/9; object-fit:cover;
+  border-radius:10px; border:1px solid var(--border);
+  box-shadow:0 4px 12px var(--ring);
+}
+
+/* ====== Video ====== */
+.video{margin-top:16px; text-align:center}
+.video iframe{width:100%; max-width:860px; height:484px; border:0; border-radius:10px; box-shadow:0 6px 18px var(--ring)}
+
+/* ====== Footer ====== */
+.footer{
+  border-top:1px solid var(--border);
+  background:var(--blue); color:#fff;
+  padding:18px 0; text-align:center;   /* was 30px */
+}
+.footer p{margin:6px 0}
+
+/* ====== Responsive tweaks ====== */
+@media (max-width:900px){
+  .hero{padding:44px 0 32px}
+  .hero h1{font-size:36px}
+}
+@media (max-width:600px){
+  nav a{margin-left:12px}
+  .hero{padding:36px 0 26px}
+  .section{padding:32px 0}
+}
