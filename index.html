@@ -6,6 +6,19 @@
   <title>Taimora Foundation — Help with Hope</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* Small extras to enhance donor sections without touching style.css */
+    .btn{display:inline-block;padding:10px 16px;border-radius:12px;text-decoration:none;font-weight:700;border:1px solid #224E8B;color:#224E8B}
+    .btn.primary{background:#224E8B;color:#fff}
+    .btn.ghost{background:#fff}
+    .kpis{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));margin-top:12px}
+    .kpis .card h3{margin:0 0 4px}
+    .muted{color:#475569}
+    .donation-tiers{width:100%;border-collapse:collapse;margin-top:8px}
+    .donation-tiers th,.donation-tiers td{border:1px solid #E5E7EB;padding:10px;text-align:left}
+    .donation-tiers th{background:#F7F9FC}
+    .center{text-align:center}
+  </style>
 </head>
 <body>
   <!-- ===== HEADER ===== -->
@@ -19,7 +32,9 @@
         <a href="#about">About</a>
         <a href="#mission">Mission</a>
         <a href="#focus">Focus</a>
+        <a href="#impact">Impact</a>
         <a href="#gallery">Gallery</a>
+        <a href="#donate">Donate</a>
         <a href="#contact">Contact</a>
       </nav>
     </div>
@@ -30,6 +45,10 @@
     <div class="container">
       <h1>Together, we rise in hope.</h1>
       <p>Help us bring food, clean water, healthcare, and opportunity to families across Nigeria.</p>
+      <div style="margin-top:14px">
+        <a class="btn primary" href="#donate">Donate</a>
+        <a class="btn ghost" href="#contact">Partner with us</a>
+      </div>
     </div>
   </section>
 
@@ -48,6 +67,24 @@
       <h2>Mission & Vision</h2>
       <p><b>Mission:</b> To uplift vulnerable families and children through food assistance, education, healthcare support, and empowerment programs.</p>
       <p><b>Vision:</b> A world where every individual has access to food, opportunity, and a pathway toward a hopeful and self-reliant future.</p>
+      <div class="kpis">
+        <div class="card">
+          <h3>Food Security</h3>
+          <p class="muted">Community feeding & nutrition packs for households in need.</p>
+        </div>
+        <div class="card">
+          <h3>Clean Water & Health</h3>
+          <p class="muted">Boreholes, urgent hospital bill support & medical outreach.</p>
+        </div>
+        <div class="card">
+          <h3>Education & Youth</h3>
+          <p class="muted">Scholarships, school kits, vocational & digital skills.</p>
+        </div>
+        <div class="card">
+          <h3>Women & Families</h3>
+          <p class="muted">Micro-grants and training for livelihood resilience.</p>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -65,14 +102,53 @@
     </div>
   </section>
 
+  <!-- ===== IMPACT (Donor-friendly) ===== -->
+  <section id="impact" class="section alt">
+    <div class="container">
+      <h2>Impact Highlights</h2>
+      <div class="kpis">
+        <div class="card">
+          <h3>1,000+ meals</h3>
+          <p class="muted">served across community feeding outreaches.</p>
+        </div>
+        <div class="card">
+          <h3>Students back in school</h3>
+          <p class="muted">tuition support & learning materials provided.</p>
+        </div>
+        <div class="card">
+          <h3>Medical assistance</h3>
+          <p class="muted">hospital bills paid for urgent cases.</p>
+        </div>
+        <div class="card">
+          <h3>Inclusive support</h3>
+          <p class="muted">targeted aid for persons with disabilities.</p>
+        </div>
+      </div>
+
+      <h3 style="margin-top:20px">How Your Gift Helps</h3>
+      <table class="donation-tiers">
+        <thead>
+          <tr><th>Gift</th><th>What it can do</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>₦5,000</td><td>Feeds a child for a week with nutritious meals.</td></tr>
+          <tr><td>₦20,000</td><td>Provides a school kit: bag, books, and stationery.</td></tr>
+          <tr><td>₦50,000</td><td>Covers partial hospital bills for an urgent case.</td></tr>
+          <tr><td>₦250,000+</td><td>Co-funds a community borehole or youth training cohort.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
   <!-- ===== GALLERY ===== -->
-  <section id="gallery" class="section alt">
+  <section id="gallery" class="section">
     <div class="container">
       <h2>Our Work in Action</h2>
       <div class="gallery">
-        <img src="assets/sample1.jpg" alt="Community Feeding">
-        <img src="assets/sample2.jpg" alt="Borehole Project">
-        <img src="assets/sample3.jpg" alt="Youth Training">
+        <img src="feeding.jpg" alt="Community Feeding">
+        <img src="borehole.jpg" alt="Borehole Project">
+        <img src="training.jpg" alt="Youth Training">
+        <img src="persons.with.disability.jpg" alt="Support for Persons with Disabilities">
       </div>
       <div class="video">
         <iframe width="560" height="315" 
@@ -82,6 +158,30 @@
           allowfullscreen>
         </iframe>
       </div>
+      <div class="center" style="margin-top:14px">
+        <a class="btn primary" href="#donate">Support This Work</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== DONATE ===== -->
+  <section id="donate" class="section alt">
+    <div class="container">
+      <h2>Donate / Partner</h2>
+      <p class="muted">Your generosity fuels food relief, healthcare, education, and sustainable projects. Bank transfer details:</p>
+      <ul>
+        <li><b>Bank:</b> [Your Bank Name]</li>
+        <li><b>Account Name:</b> Taimora Foundation</li>
+        <li><b>Account Number:</b> [XXXXXXXXXX]</li>
+      </ul>
+      <p class="muted">Prefer online giving? We can enable Paystack/Flutterwave. Contact us to set it up.</p>
+      <div style="margin-top:10px">
+        <a class="btn primary" href="#contact">Partner with us</a>
+        <a class="btn ghost" href="mailto:taimorafoundation@yahoo.com">Email our team</a>
+      </div>
+      <p class="muted" style="margin-top:14px;font-size:14px">
+        <b>Transparency & Safeguarding:</b> We publish simple reports (meals served, families reached, wells drilled, medical cases supported) and follow a strict non-discrimination and child-safeguarding policy.
+      </p>
     </div>
   </section>
 
